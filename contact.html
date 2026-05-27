@@ -1,94 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Pactora Support</title>
-    <meta name="description" content="Contact and support information for Pactora." />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="index.html">
-          <img class="logo" src="assets/logo.svg" alt="Pactora logo" />
-          <span>Pactora</span>
-        </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-        <nav>
-          <ul id="nav-links" class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="how-to-use.html">How to Use</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a class="btn btn-sm" href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support — Pactora</title>
+    <meta name="description" content="Reach out to the Pactora team for support, bug reports, or beta access inquiries.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-400 antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/70 backdrop-blur-xl border-b border-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 6 9 17l-5-5"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-extrabold text-slate-50 tracking-tighter">Pactora</span>
+                </a>
+                
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">Features</a>
+                    <a href="how-to-use.html" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">How it works</a>
+                    <a href="privacy.html" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">Privacy</a>
+                    <a href="contact.html" class="px-5 py-2 text-sm font-bold text-slate-50 bg-indigo-600 rounded-full hover:bg-indigo-500 transition-all active:scale-95 shadow-lg shadow-indigo-500/20">Join Beta</a>
+                </nav>
+                
+                <button class="md:hidden text-slate-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <div class="scroll-progress" aria-hidden="true"></div>
+    <main class="pt-32 pb-24 relative overflow-hidden min-h-screen">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-indigo-600/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+            <div class="animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-50 tracking-tighter mb-6">Contact & Support</h1>
+                <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">Have a question or found a bug? We're here to help you maintain your integrity sanctuary.</p>
+            </div>
 
-    <main class="container">
-      <section class="page-header page-hero">
-        <h1>Contact &amp; Client Support</h1>
-        <p>Reach the Pactora team using the details available in the project documentation.</p>
-        <div class="page-meta">
-          <span class="pill">Support</span>
-          <span class="pill">48-hour response</span>
-          <span class="pill">Quick links</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left animate-fade-in-up delay-100">
+                <!-- Support Card -->
+                <div class="p-8 rounded-[2.5rem] bg-slate-900/40 border border-slate-800/60 backdrop-blur-md shadow-2xl">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-50 mb-2">Support Email</h2>
+                    <p class="text-slate-400 mb-6">For general inquiries, account issues, or beta access requests.</p>
+                    <a href="mailto:support@pactora.app" class="text-indigo-400 font-bold hover:text-indigo-300 transition-colors text-lg">support@pactora.app</a>
+                </div>
+
+                <!-- Developer Card -->
+                <div class="p-8 rounded-[2.5rem] bg-slate-900/40 border border-slate-800/60 backdrop-blur-md shadow-2xl">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-50 mb-2">Developer</h2>
+                    <p class="text-slate-400 mb-6">Direct technical feedback or partnership opportunities.</p>
+                    <p class="text-slate-100 font-bold text-lg">Sourabh Singh</p>
+                </div>
+
+                <!-- Bug Reports -->
+                <div class="md:col-span-2 p-8 rounded-[2.5rem] bg-slate-900/40 border border-slate-800/60 backdrop-blur-md shadow-2xl">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0">
+                            <svg class="w-8 h-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-50 mb-2">Bug Reports</h2>
+                            <p class="text-slate-400 leading-relaxed">Help us improve Pactora. When reporting an issue, please include your device model, Android version, and a brief description of the steps to reproduce the bug.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 animate-fade-in-up delay-200">
+                <h3 class="text-sm font-semibold tracking-[0.2em] uppercase text-indigo-400 mb-8">Quick Resources</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="how-to-use.html" class="px-6 py-3 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold hover:bg-slate-800 hover:text-white transition-all">User Guide</a>
+                    <a href="privacy.html" class="px-6 py-3 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold hover:bg-slate-800 hover:text-white transition-all">Privacy Policy</a>
+                    <a href="terms.html" class="px-6 py-3 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold hover:bg-slate-800 hover:text-white transition-all">Terms of Use</a>
+                </div>
+            </div>
         </div>
-      </section>
-
-      <section class="page-content">
-        <div class="card-grid">
-          <div class="card">
-            <h3>Support email</h3>
-            <p><a href="mailto:sourabh3527@gmail.com">sourabh3527@gmail.com</a></p>
-            <p>We aim to reply within 48 hours.</p>
-          </div>
-          <div class="card">
-            <h3>Developer</h3>
-            <p>Sourabh Singh</p>
-            <p>Location details were not provided in the project files.</p>
-          </div>
-          <div class="card">
-            <h3>Bug reports</h3>
-            <p>Include your device model and OS version when reporting issues.</p>
-          </div>
-        </div>
-
-        <h2>Quick links</h2>
-        <ul class="list">
-          <li><a href="privacy.html">Read the privacy policy</a></li>
-          <li><a href="terms.html">Review terms &amp; conditions</a></li>
-          <li><a href="how-to-use.html">Follow the how-to guide</a></li>
-        </ul>
-      </section>
     </main>
 
-    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">↑</button>
-
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <strong>Pactora</strong>
-          <p>Private commitment operations for promises, items, and IOUs.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2 text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                        </div>
+                        <span class="text-xl font-extrabold text-slate-50 tracking-tighter">Pactora</span>
+                    </div>
+                    <p class="max-w-xs text-slate-400 text-sm leading-relaxed mb-8">Personal integrity tracking with radical privacy. Offline-first commitments for a more accountable world.</p>
+                </div>
+                <div>
+                    <h5 class="text-slate-50 font-bold mb-6 text-sm uppercase tracking-widest">Product</h5>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="index.html#features" class="hover:text-slate-50 transition-colors">Features</a></li>
+                        <li><a href="how-to-use.html" class="hover:text-slate-50 transition-colors">User Guide</a></li>
+                        <li><a href="contact.html" class="hover:text-slate-50 transition-colors">Join Beta</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-50 font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="privacy.html" class="hover:text-slate-50 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-slate-50 transition-colors">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-600">
+                <p>&copy; 2026 Pactora. Made with ❤️ by Sourabh Singh.</p>
+                <p>Offline-Always &bull; Privacy-First</p>
+            </div>
         </div>
-        <div>
-          <strong>Explore</strong>
-          <p><a href="index.html">Home</a></p>
-          <p><a href="privacy.html">Privacy &amp; Data Policy</a></p>
-          <p><a href="terms.html">Terms of Service</a></p>
-        </div>
-        <div>
-          <strong>Support</strong>
-          <p><a href="mailto:sourabh3527@gmail.com">sourabh3527@gmail.com</a></p>
-          <p>Response time: within 48 hours</p>
-        </div>
-      </div>
     </footer>
 
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
