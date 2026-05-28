@@ -27,13 +27,14 @@
         .delay-300 { animation-delay: 0.3s; }
         
         .glass-panel {
-            background: rgba(15, 23, 42, 0.4);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.5);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #818cf8, #22d3ee, #818cf8);
+            background: linear-gradient(to right, #4f46e5, #0ea5e9, #4f46e5);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -45,34 +46,34 @@
 
     <style>
         
-    .prose { font-family: 'Inter', sans-serif; color: #94a3b8; line-height: 1.75; }
-    .prose h1 { font-size: 2.5rem; font-weight: 800; color: #f8fafc; margin-top: 1rem; margin-bottom: 2rem; letter-spacing: -0.025em; line-height: 1.2; text-align: center; }
-    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #f1f5f9; margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #1e293b; padding-bottom: 0.75rem; letter-spacing: -0.025em; }
-    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #e2e8f0; margin-top: 2.5rem; margin-bottom: 1rem; }
+    .prose { font-family: 'Inter', sans-serif; color: #475569; line-height: 1.75; }
+    .prose h1 { font-size: 2.5rem; font-weight: 800; color: #0f172a; margin-top: 1rem; margin-bottom: 2rem; letter-spacing: -0.025em; line-height: 1.2; text-align: center; }
+    .prose h2 { font-size: 1.5rem; font-weight: 700; color: #1e293b; margin-top: 3.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.75rem; letter-spacing: -0.025em; }
+    .prose h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-top: 2.5rem; margin-bottom: 1rem; }
     .prose p { margin-bottom: 1.5rem; }
     .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
     .prose ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
     .prose li { margin-bottom: 0.5rem; padding-left: 0.25rem; }
-    .prose li::marker { color: #64748b; font-weight: bold; }
-    .prose strong { color: #e2e8f0; font-weight: 700; }
-    .prose em { color: #cbd5e1; }
-    .prose a { color: #818cf8; text-decoration: none; font-weight: 500; border-bottom: 1px solid #818cf8; transition: all 0.2s; }
-    .prose a:hover { color: #a5b4fc; border-color: #a5b4fc; }
-    .prose hr { border: none; border-top: 1px solid #1e293b; margin: 3rem 0; }
-    .prose code { background-color: rgba(30, 41, 59, 0.7); color: #a5b4fc; padding: 0.2rem 0.4rem; border-radius: 0.375rem; font-size: 0.875em; font-family: monospace; border: 1px solid #334155; }
-    .prose pre { background-color: #020617; padding: 1.5rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1.5rem; border: 1px solid #1e293b; box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); }
-    .prose pre code { background-color: transparent; padding: 0; color: #cbd5e1; border: none; }
-    .prose blockquote { border-left: 4px solid #4f46e5; padding-left: 1.25rem; font-style: italic; color: #94a3b8; margin: 2rem 0; background: linear-gradient(to right, rgba(15,23,42,0.8), transparent); padding: 1.25rem; border-radius: 0 0.5rem 0.5rem 0; }
-    .prose table { width: 100%; text-align: left; border-collapse: separate; border-spacing: 0; margin-bottom: 2rem; border-radius: 0.75rem; overflow: hidden; border: 1px solid #1e293b; }
-    .prose th { background-color: #0f172a; padding: 1rem; color: #f1f5f9; font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #1e293b; }
-    .prose td { padding: 1rem; color: #94a3b8; border-bottom: 1px solid #1e293b; background-color: rgba(15, 23, 42, 0.4); }
+    .prose li::marker { color: #94a3b8; font-weight: bold; }
+    .prose strong { color: #0f172a; font-weight: 700; }
+    .prose em { color: #64748b; }
+    .prose a { color: #4f46e5; text-decoration: none; font-weight: 500; border-bottom: 1px solid #4f46e5; transition: all 0.2s; }
+    .prose a:hover { color: #4338ca; border-color: #4338ca; }
+    .prose hr { border: none; border-top: 1px solid #e2e8f0; margin: 3rem 0; }
+    .prose code { background-color: #eef2ff; color: #4338ca; padding: 0.2rem 0.4rem; border-radius: 0.375rem; font-size: 0.875em; font-family: monospace; border: 1px solid #c7d2fe; }
+    .prose pre { background-color: #f8fafc; padding: 1.5rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1.5rem; border: 1px solid #e2e8f0; box-shadow: inset 0 2px 4px 0 rgba(15, 23, 42, 0.04); }
+    .prose pre code { background-color: transparent; padding: 0; color: #334155; border: none; }
+    .prose blockquote { border-left: 4px solid #4f46e5; padding-left: 1.25rem; font-style: italic; color: #475569; margin: 2rem 0; background: #f8fafc; padding: 1.25rem; border-radius: 0 0.5rem 0.5rem 0; }
+    .prose table { width: 100%; text-align: left; border-collapse: separate; border-spacing: 0; margin-bottom: 2rem; border-radius: 0.75rem; overflow: hidden; border: 1px solid #e2e8f0; }
+    .prose th { background-color: #f1f5f9; padding: 1rem; color: #1e293b; font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #e2e8f0; }
+    .prose td { padding: 1rem; color: #475569; border-bottom: 1px solid #e2e8f0; background-color: #ffffff; }
     .prose tr:last-child td { border-bottom: none; }
-    .prose img { max-width: 100%; border-radius: 0.75rem; border: 1px solid #1e293b; margin: 2rem auto; display: block; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .prose img { max-width: 100%; border-radius: 0.75rem; border: 1px solid #e2e8f0; margin: 2rem auto; display: block; box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.06); }
 
     </style>
 </head>
-<body class="bg-slate-950 text-slate-400 antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/70 backdrop-blur-xl border-b border-slate-900/50">
+<body class="bg-white text-slate-700 antialiased selection:bg-indigo-200 selection:text-indigo-900">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center gap-3 group">
@@ -81,17 +82,17 @@
                             <path d="M20 6 9 17l-5-5"/>
                         </svg>
                     </div>
-                    <span class="text-xl font-extrabold text-slate-50 tracking-tighter">Pactora</span>
+                    <span class="text-xl font-extrabold text-slate-900 tracking-tighter">Pactora</span>
                 </a>
                 
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html#features" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">Features</a>
-                    <a href="how-to-use.html" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">How it works</a>
-                    <a href="privacy.html" class="text-sm font-semibold text-slate-400 hover:text-slate-50 transition-colors">Privacy</a>
-                    <a href="contact.html" class="px-5 py-2 text-sm font-bold text-slate-50 bg-slate-900 border border-slate-800 rounded-full hover:bg-slate-800 hover:border-slate-700 transition-all active:scale-95">Join Beta</a>
+                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Features</a>
+                    <a href="how-to-use.html" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">How it works</a>
+                    <a href="privacy.html" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Privacy</a>
+                    <a href="contact.html" class="px-5 py-2 text-sm font-bold text-white bg-indigo-600 border border-indigo-600 rounded-full hover:bg-indigo-500 hover:border-indigo-500 transition-all active:scale-95">Join Beta</a>
                 </nav>
                 
-                <button class="md:hidden text-slate-400">
+                <button class="md:hidden text-slate-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
@@ -99,16 +100,16 @@
     </header>
 
     <main class="pt-32 pb-24 relative overflow-hidden min-h-screen">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-indigo-600/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-indigo-500/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
         <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 animate-fade-in-up">
-            <div class="p-8 md:p-12 rounded-[2.5rem] bg-slate-900/40 border border-slate-800/60 backdrop-blur-md shadow-2xl">
+            <div class="p-8 md:p-12 rounded-[2.5rem] bg-white border border-slate-200 shadow-xl">
                 <div class="prose max-w-none">
-                    <h1>Pactora Terms of Use: End-User License Agreement and Service Framework</h1>
-<p><strong>Version:</strong> 2.0.0-GOLD<br><strong>Effective Date:</strong> May 27, 2026<br><strong>Governing Principle:</strong> Accountability and Personal Integrity</p>
+                    <h1>Pactora Terms of Use</h1>
+<p><strong>Version:</strong> 2.0.0<br><strong>Effective Date:</strong> May 27, 2026</p>
 <hr>
 <h2>1. BINDING RELATIONSHIP AND ACCEPTANCE</h2>
 <h3>1.1 Formal Agreement</h3>
-<p>These Terms of Use (&quot;Terms,&quot; &quot;Agreement,&quot; or &quot;EULA&quot;) constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you,&quot; &quot;User,&quot; or &quot;Licensee&quot;), and <strong>Pactora</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), concerning your access to and use of the Pactora mobile application (the &quot;App,&quot; &quot;Software,&quot; or &quot;Service&quot;). </p>
+<p>These Terms of Use (&quot;Terms&quot;) are a legally binding agreement between you and <strong>Pactora</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) covering your access to and use of the Pactora mobile application (the &quot;App&quot;).</p>
 <h3>1.2 Unconditional Acceptance</h3>
 <p>By downloading, installing, accessing, or otherwise utilizing the App, you acknowledge that you have read, understood, and agreed to be bound by all of these Terms. If you do not agree with all of these Terms, then you are expressly prohibited from using the App and you must discontinue use immediately.</p>
 <h3>1.3 Supplemental Disclosures</h3>
@@ -277,7 +278,7 @@
         </div>
     </main>
 
-    <footer class="bg-slate-950 border-t border-slate-900 py-20">
+    <footer class="bg-slate-50 border-t border-slate-200 py-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2 text-left">
@@ -285,30 +286,30 @@
                         <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
                             <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-xl font-extrabold text-slate-50 tracking-tighter">Pactora</span>
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tighter">Pactora</span>
                     </div>
-                    <p class="max-w-xs text-slate-400 text-sm leading-relaxed mb-8">Personal integrity tracking with radical privacy. Offline-first commitments for a more accountable world.</p>
+                    <p class="max-w-xs text-slate-600 text-sm leading-relaxed mb-8">Private, offline-first tracking for promises, IOUs, and borrowed items.</p>
                     <div class="flex gap-4">
-                        <a href="https://github.com/sooubh/pactora" class="text-slate-500 hover:text-slate-50 transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                        <a href="https://github.com/sooubh/pactora" class="text-slate-500 hover:text-slate-900 transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
                     </div>
                 </div>
                 <div>
-                    <h5 class="text-slate-50 font-bold mb-6 text-sm uppercase tracking-widest">Product</h5>
-                    <ul class="space-y-4 text-sm font-medium">
-                        <li><a href="index.html#features" class="hover:text-slate-50 transition-colors">Features</a></li>
-                        <li><a href="how-to-use.html" class="hover:text-slate-50 transition-colors">User Guide</a></li>
-                        <li><a href="contact.html" class="hover:text-slate-50 transition-colors">Join Beta</a></li>
+                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Product</h5>
+                    <ul class="space-y-4 text-sm font-medium text-slate-600">
+                        <li><a href="index.html#features" class="hover:text-slate-900 transition-colors">Features</a></li>
+                        <li><a href="how-to-use.html" class="hover:text-slate-900 transition-colors">User Guide</a></li>
+                        <li><a href="contact.html" class="hover:text-slate-900 transition-colors">Join Beta</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-slate-50 font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
-                    <ul class="space-y-4 text-sm font-medium">
-                        <li><a href="privacy.html" class="hover:text-slate-50 transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-slate-50 transition-colors">Terms of Use</a></li>
+                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
+                    <ul class="space-y-4 text-sm font-medium text-slate-600">
+                        <li><a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-slate-900 transition-colors">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-600">
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
                 <p>&copy; 2026 Pactora. Made with ❤️ by Sourabh Singh.</p>
                 <p>Offline-Always &bull; Privacy-First</p>
             </div>
