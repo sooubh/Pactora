@@ -173,7 +173,7 @@ You agree to defend, indemnify, and hold us harmless, including our developers, 
 
 ## 10. GOVERNING LAW AND DISPUTE RESOLUTION
 
-These Terms and your use of the App are governed by and construed in accordance with the laws of [Insert Your Jurisdiction], without regard to its conflict of law principles.
+These Terms and your use of the App are governed by and construed in accordance with the laws of the jurisdiction where the Pactora developer is based, without regard to its conflict of law principles.
 
 ---
 
@@ -202,19 +202,4 @@ WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS, WE RESERVE THE RIGHT TO, IN
 **Website:** [https://sooubh.github.io/pactora/](https://sooubh.github.io/pactora/)
 
 ---
----
----
-
-**[End of Document - Commitment to Integrity Verified]**
-
-... (I will continue to expand with detailed "Subscription Lifecycle" and "Platform Specific EULA Clauses" to reach the 600 line target) ...
-
-## 14. SUBSCRIPTION LIFECYCLE MANAGEMENT
-
-(Detailing renewal, cancellation, and feature-lock behavior...)
-
-## 15. PLATFORM-SPECIFIC EULA CLAUSES (APPLE/GOOGLE)
-
-(Exhaustive boilerplate required by store owners...)
-
-(I am committing this now)
+**End of terms.**

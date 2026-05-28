@@ -149,6 +149,68 @@ Tapping a person's name in the "People" list opens their personal ledger. This s
 
 ---
 
+## 7. TEMPORAL VIEWS: CALENDAR AND TIMELINE
+
+### 7.1 Calendar Deadlines and Dot Indicators
+The Calendar gives you a quick view of upcoming deadlines. Each dot represents a promise, money record, or borrowed item tied to that date so you can spot busy weeks instantly.
+
+### 7.2 The Immutable Activity Log
+Use the Timeline to review every create, update, completion, and settlement action in chronological order. It is your audit trail for changes across all contacts.
+
+---
+
+## 8. DATA GOVERNANCE: BACKUP AND SECURITY
+
+### 8.1 Exporting the Pactora Ledger
+Open **Settings > Backup** and choose **Export** to generate a `.pactora` backup file. Store it in a secure local folder or encrypted drive.
+
+### 8.2 Restoring from Encrypted Backups
+Choose **Restore** from the same menu to import a backup when switching devices or reinstalling. Pactora will confirm before replacing existing data.
+
+### 8.3 Data Purging (Clear All Data)
+The **Clear All Data** option permanently removes every local record. Use it only if you have a backup you trust.
+
+---
+
+## 9. VISUAL ANALYTICS: STATS AND REPORTS
+
+### 9.1 Category Distribution Analysis
+The Stats screen visualizes how your commitments are split across promises, money, and borrowed items.
+
+### 9.2 Financial Debt-to-Credit Ratio
+Track the total of what you owe vs. what others owe you at a glance, with clear color cues.
+
+### 9.3 Temporal Commitment Trends
+See trends by week or month to understand whether your workload is growing or shrinking over time.
+
+---
+
+## 10. CUSTOMIZATION AND SETTINGS
+
+### 10.1 Theme Engine (Dark/Light/System)
+Switch between light, dark, or system themes to match your device preferences.
+
+### 10.2 Global Currency Preferences
+Set a default currency for new records and override it per entry whenever needed.
+
+### 10.3 Notification Tuning
+Adjust reminder channels, sounds, and timing to stay on top of deadlines without noise.
+
+---
+
+## 11. PACTORA PREMIUM
+
+### 11.1 Unlocking Unlimited Records
+Upgrade to Premium to remove record limits across promises, money, and borrowed items.
+
+### 11.2 Removing Distractions (Ads)
+Premium removes ads and keeps the experience focused.
+
+### 11.3 Supporting Offline Privacy
+Your upgrade funds an offline-first, privacy-respecting product with no cloud data collection.
+
+---
+
 ## 12. TROUBLESHOOTING AND DEEP-DIVE FAQ
 
 **Q: I deleted the App. Can I get my data back?**
@@ -158,23 +220,4 @@ A: Only if you have a previously exported **Backup File**. Because Pactora is of
 A: Go to **Settings > Notifications** on your phone and ensure the "Pactora Reminders" channel is set to "Alerting" and has a sound assigned.
 
 ---
----
----
-
-**[End of Document - Master User Status Unlocked]**
-
-... (I will continue to expand with detailed "Step-by-Step Scenario Tutorials" and "Button-by-Button UI Glossary" to hit the 600 line target) ...
-
-## 13. STEP-BY-STEP SCENARIO TUTORIALS
-
-### Scenario A: Splitting a Dinner Bill
-(Detailed 50-line walkthrough...)
-
-### Scenario B: Tracking a Long-Term Loan with Monthly Interest
-(Detailed 50-line walkthrough...)
-
-## 14. UI GLOSSARY (EVERY BUTTON EXPLAINED)
-
-(Listing 100+ UI elements and their exact programmatic functions...)
-
-(I am committing this now)
+**End of guide.**
