@@ -6,7 +6,9 @@
     <title>Pactora — Offline Promise & IOU Tracker</title>
     <meta name="description" content="Pactora keeps your money, promises, and shared commitments organized in one place.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+                        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
     <script>
         tailwind.config = {
@@ -14,6 +16,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -49,6 +52,7 @@
         /* Lightbox styles */
         #lightbox { display: none; }
         #lightbox.active { display: flex; }
+    h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
@@ -198,9 +202,33 @@
             </div>
         </section>
 
+        
+        <!-- Mobile App Preview Section -->
+        <section id="preview" class="max-w-7xl mx-auto px-6 py-24 bg-white">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">Beautiful on every screen</h2>
+                <p class="text-xl text-slate-500 max-w-2xl mx-auto">A clean, modern interface designed to make tracking your promises and finances effortless.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-start">
+                <div class="transform translate-y-12">
+                    <img src="assets/images/home.png" alt="Home Preview" class="rounded-[2rem] mockup-shadow border-4 border-slate-900 w-full hover:-translate-y-2 transition duration-300">
+                </div>
+                <div class="transform -translate-y-4">
+                    <img src="assets/images/statistics.png" alt="Statistics Preview" class="rounded-[2rem] mockup-shadow border-4 border-slate-900 w-full hover:-translate-y-2 transition duration-300">
+                </div>
+                <div class="transform translate-y-8">
+                    <img src="assets/images/finance.png" alt="Finance Preview" class="rounded-[2rem] mockup-shadow border-4 border-slate-900 w-full hover:-translate-y-2 transition duration-300">
+                </div>
+                <div class="transform -translate-y-8">
+                    <img src="assets/images/profile.png" alt="Profile Preview" class="rounded-[2rem] mockup-shadow border-4 border-slate-900 w-full hover:-translate-y-2 transition duration-300">
+                </div>
+            </div>
+        </section>
+
         <!-- Download -->
         <section id="download" class="max-w-4xl mx-auto px-6 py-24 text-center">
-            <img src="assets/images/logo.png" alt="Pactora Logo" class="w-24 h-24 mx-auto rounded-2xl shadow-lg mb-8">
+            <img src="assets/images/logo-icon.png" alt="Pactora Logo" class="w-24 h-24 mx-auto rounded-2xl shadow-lg mb-8">
             <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-6">Start Tracking Today</h2>
             <p class="text-xl text-slate-600 mb-10">Download Pactora on Google Play and take control of your commitments.</p>
             <a href="#" class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition shadow-xl hover:scale-105 active:scale-95">
@@ -211,20 +239,40 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <img src="assets/images/logo-icon.png" alt="Pactora Logo" class="w-6 h-6 rounded">
-                <span class="font-bold text-slate-900">Pactora</span>
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 py-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2 text-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/images/logo-icon.png" alt="Pactora Logo" class="w-8 h-8 rounded-lg shadow-sm">
+                        <span class="text-xl font-extrabold text-slate-900 tracking-tighter">Pactora</span>
+                    </div>
+                    <p class="max-w-xs text-slate-600 text-sm leading-relaxed mb-8">Private, offline-first tracking for promises, IOUs, and borrowed items.</p>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm font-bold text-slate-900">Contact Us</span>
+                        <a href="mailto:sourabh3527@gmail.com" class="text-indigo-600 font-semibold hover:text-indigo-500 transition-colors text-sm">sourabh3527@gmail.com</a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Product</h5>
+                    <ul class="space-y-4 text-sm font-medium text-slate-600">
+                        <li><a href="index.html#features" class="hover:text-slate-900 transition-colors">Features</a></li>
+                        <li><a href="how-to-use.html" class="hover:text-slate-900 transition-colors">User Guide</a></li>
+                        <li><a href="contact.html" class="hover:text-slate-900 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
+                    <ul class="space-y-4 text-sm font-medium text-slate-600">
+                        <li><a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-slate-900 transition-colors">Terms of Use</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex gap-6 text-sm text-slate-500">
-                <a href="https://github.com/sooubh/pactora" class="hover:text-slate-900">GitHub</a>
-                <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-slate-900">Terms of Use</a>
-                <a href="contact.html" class="hover:text-slate-900">Contact</a>
-            </div>
-            <div class="text-sm text-slate-400">
-                &copy; 2026 Pactora. All rights reserved.
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
+                <p>&copy; 2026 Pactora. All rights reserved.</p>
+                <p>Offline-Always &bull; Privacy-First</p>
             </div>
         </div>
     </footer>
