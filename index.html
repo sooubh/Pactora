@@ -4,307 +4,244 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pactora — Offline Promise & IOU Tracker</title>
-    <meta name="description" content="Pactora is a private, offline-first app for tracking promises, IOUs, and borrowed items. No accounts or cloud required.">
+    <meta name="description" content="Pactora keeps your money, promises, and shared commitments organized in one place.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        
-        @keyframes fade-in-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .animate-fade-in-up {
             animation: fade-in-up 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        
+        @keyframes fade-in-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
         
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.9);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        .mockup-shadow {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.05);
         }
-
-        .text-gradient {
-            background: linear-gradient(to right, #4f46e5, #0ea5e9, #4f46e5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Hide details marker */
-        details summary::-webkit-details-marker { display: none; }
+        
+        /* Lightbox styles */
+        #lightbox { display: none; }
+        #lightbox.active { display: flex; }
     </style>
 </head>
-<body class="bg-white text-slate-700 antialiased selection:bg-indigo-200 selection:text-indigo-900">
+<body class="bg-gray-50 text-slate-800 antialiased selection:bg-brand-200 selection:text-brand-900">
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
-                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 6 9 17l-5-5"/>
-                        </svg>
-                    </div>
-                    <span class="text-xl font-extrabold text-slate-900 tracking-tighter">Pactora</span>
-                </a>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html#features" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Features</a>
-                    <a href="how-to-use.html" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">How it works</a>
-                    <a href="privacy.html" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Privacy</a>
-                    <a href="contact.html" class="px-5 py-2 text-sm font-bold text-white bg-indigo-600 border border-indigo-600 rounded-full hover:bg-indigo-500 hover:border-indigo-500 transition-all active:scale-95">Join Beta</a>
-                </nav>
-                
-                <button class="md:hidden text-slate-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/images/logo-icon.png" alt="Pactora Logo" class="w-8 h-8 rounded-lg shadow-sm">
+                <span class="text-xl font-bold text-slate-900 tracking-tight">Pactora</span>
+            </a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="#features" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Features</a>
+                <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">How it Works</a>
+                <a href="#gallery" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition">Gallery</a>
+            </nav>
+            <a href="#download" class="px-4 py-2 text-sm font-semibold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition">Get the App</a>
         </div>
     </header>
 
-    <main>
+    <main class="pt-24 pb-16">
         <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[500px] bg-indigo-500/10 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
-            <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-cyan-400/10 blur-[100px] rounded-full -z-10 pointer-events-none"></div>
+        <section class="max-w-6xl mx-auto px-6 pt-16 lg:pt-24 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6 animate-fade-in-up">
+                Pactora keeps your money, <br class="hidden md:block"> promises, and shared <br class="hidden md:block"> commitments organized.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto animate-fade-in-up delay-100">
+                A simple, beautiful way to track everything you owe, everything owed to you, and every promise you make.
+            </p>
+            <div class="flex justify-center gap-4 animate-fade-in-up delay-200 mb-16">
+                <a href="#download" class="px-6 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition shadow-lg">Download on Google Play</a>
+                <a href="#features" class="px-6 py-3 bg-white text-slate-700 border border-gray-200 rounded-full font-semibold hover:bg-gray-50 transition shadow-sm">Explore Features</a>
+            </div>
+            
+            <div class="relative max-w-sm mx-auto animate-fade-in-up delay-300">
+                <img src="assets/images/home.png" alt="Pactora Home App Screenshot" class="rounded-[2.5rem] mockup-shadow border-[6px] border-slate-900 mx-auto w-full object-cover z-10 relative bg-white">
+                <div class="absolute inset-0 bg-brand-500/20 blur-3xl -z-10 transform scale-110"></div>
+            </div>
+        </section>
 
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8 animate-fade-in-up">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                    </span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-600">Privacy-First, Offline-Always</span>
+        <!-- Features Section -->
+        <section id="features" class="max-w-6xl mx-auto px-6 py-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Everything you need to stay accountable</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                <div class="order-2 md:order-1">
+                    <img src="assets/images/finance.png" alt="Expense Tracking" class="rounded-3xl mockup-shadow border-4 border-white mx-auto w-2/3 md:w-3/4">
                 </div>
-
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-slate-900 tracking-tighter leading-[1.1] mb-8 animate-fade-in-up delay-100">
-                    Keep promises, IOUs, and <br class="hidden md:block"> borrowed items organized.
-                </h1>
-
-                <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 font-medium leading-relaxed mb-12 animate-fade-in-up delay-200">
-                    Pactora is a private, offline-first app that helps you track commitments, money owed, and items lent or borrowed. Everything stays on your device—no accounts or cloud needed.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20 animate-fade-in-up delay-300">
-                    <a href="contact.html" class="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-indigo-600 rounded-full shadow-xl shadow-indigo-500/20 hover:bg-indigo-500 hover:scale-[1.02] active:scale-95 transition-all">
-                        Get Early Access
-                    </a>
-                    <a href="how-to-use.html" class="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-700 bg-white backdrop-blur-md border border-slate-200 rounded-full hover:bg-slate-100 hover:border-slate-300 active:scale-95 transition-all">
-                        View User Guide
-                    </a>
+                <div class="order-1 md:order-2">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Expense Tracking</h3>
+                    <p class="text-slate-600 text-lg">Easily log shared expenses, IOUs, and split bills. Keep a clear record of who paid for what and who owes whom.</p>
                 </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                <div>
+                    <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Promise Tracking</h3>
+                    <p class="text-slate-600 text-lg">Never forget a commitment again. Log promises you make to others or they make to you, complete with due dates.</p>
+                </div>
+                <div>
+                    <img src="assets/images/promise.png" alt="Promise Tracking" class="rounded-3xl mockup-shadow border-4 border-white mx-auto w-2/3 md:w-3/4">
+                </div>
+            </div>
 
-                <!-- Mockup -->
-                <div class="relative animate-fade-in-up delay-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-500/15 to-transparent blur-3xl -z-10 translate-y-20 scale-90"></div>
-                    <div class="max-w-5xl mx-auto rounded-3xl border border-slate-200 p-2 lg:p-4 bg-white/70 backdrop-blur-3xl shadow-2xl shadow-slate-200/60 overflow-hidden">
-                        <div class="relative rounded-[1.25rem] border border-slate-200 overflow-hidden bg-white">
-                            <div class="aspect-[16/9] w-full bg-slate-100 grid grid-cols-12 gap-4 p-6 lg:p-10">
-                                <div class="col-span-3 space-y-4">
-                                    <div class="h-8 w-full bg-slate-200 rounded-lg"></div>
-                                    <div class="space-y-2"><div class="h-4 w-3/4 bg-slate-200/70 rounded"></div><div class="h-4 w-1/2 bg-slate-200/70 rounded"></div></div>
-                                    <div class="pt-8 space-y-4">
-                                        <div class="h-12 w-full bg-indigo-500/10 border border-indigo-500/20 rounded-xl"></div>
-                                        <div class="h-12 w-full bg-slate-200/60 rounded-xl"></div>
-                                        <div class="h-12 w-full bg-slate-200/60 rounded-xl"></div>
-                                    </div>
-                                </div>
-                                <div class="col-span-9 space-y-8">
-                                    <div class="flex items-center justify-between">
-                                        <div class="h-10 w-48 bg-slate-200 rounded-xl"></div>
-                                        <div class="flex gap-2"><div class="h-10 w-10 bg-slate-200 rounded-full"></div><div class="h-10 w-10 bg-slate-200 rounded-full"></div></div>
-                                    </div>
-                                    <div class="grid grid-cols-3 gap-4">
-                                        <div class="h-32 bg-slate-200/70 rounded-2xl border border-slate-200"></div>
-                                        <div class="h-32 bg-slate-200/70 rounded-2xl border border-slate-200"></div>
-                                        <div class="h-32 bg-indigo-500/10 rounded-2xl border border-indigo-500/20"></div>
-                                    </div>
-                                    <div class="h-64 bg-slate-200/60 rounded-2xl border border-slate-200"></div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <img src="assets/images/timeline.png" alt="Activity Timeline" class="rounded-3xl mockup-shadow border-4 border-white mx-auto w-2/3 md:w-3/4">
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Timeline History</h3>
+                    <p class="text-slate-600 text-lg">View a chronological history of all your activities, settled debts, and completed promises.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="bg-slate-900 py-24 text-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">How it works</h2>
+                    <p class="text-slate-400 text-lg">A simple flow to keep your life organized.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700 text-center">
+                        <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">1</div>
+                        <h4 class="text-xl font-bold mb-3">Create</h4>
+                        <p class="text-slate-400">Add a new promise or financial record in seconds with a few taps.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700 text-center">
+                        <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">2</div>
+                        <h4 class="text-xl font-bold mb-3">Track</h4>
+                        <p class="text-slate-400">Monitor deadlines, due amounts, and priorities from your dashboard.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700 text-center">
+                        <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">3</div>
+                        <h4 class="text-xl font-bold mb-3">Stay Accountable</h4>
+                        <p class="text-slate-400">Mark items as completed or settled and build a history of trust.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section id="problem" class="relative py-24 lg:py-40 bg-slate-50 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <div class="max-w-3xl mb-16 lg:mb-24">
-                    <h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-indigo-600 mb-4">Why Pactora</h2>
-                    <h3 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                        Small lapses add up. <br class="hidden md:block"> Clear records keep things simple.
-                    </h3>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-left">
-                    <div class="group p-8 rounded-3xl bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md">
-                        <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Forgotten promises</h4>
-                        <p class="text-slate-600 leading-relaxed">Quick commitments get lost in chats, calendars, and memory.</p>
-                    </div>
-                    <div class="group p-8 rounded-3xl bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Awkward money</h4>
-                        <p class="text-slate-600 leading-relaxed">IOUs are easy to create and hard to remember without notes.</p>
-                    </div>
-                    <div class="group p-8 rounded-3xl bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-3">Borrowed items</h4>
-                        <p class="text-slate-600 leading-relaxed">Lent items drift away without a simple record and reminder.</p>
-                    </div>
-                </div>
+        <!-- Gallery -->
+        <section id="gallery" class="max-w-6xl mx-auto px-6 py-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">App Showcase</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="assets/images/calendar.png" alt="Calendar" class="rounded-2xl shadow-sm hover:shadow-lg transition cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="assets/images/profile.png" alt="Profile" class="rounded-2xl shadow-sm hover:shadow-lg transition cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="assets/images/promise-details.png" alt="Promise Details" class="rounded-2xl shadow-sm hover:shadow-lg transition cursor-pointer" onclick="openLightbox(this.src)">
+                <img src="assets/images/statistics.png" alt="Statistics" class="rounded-2xl shadow-sm hover:shadow-lg transition cursor-pointer" onclick="openLightbox(this.src)">
             </div>
         </section>
 
-        <!-- Solution Section -->
-        <section id="solution" class="relative py-24 lg:py-40 bg-white overflow-hidden">
-            <div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] rounded-full -z-10"></div>
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <div class="text-center max-w-3xl mx-auto mb-20 lg:mb-32">
-                    <h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-indigo-600 mb-4">How it helps</h2>
-                    <h3 class="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight leading-tight mb-8">One place for every commitment.</h3>
-                    <p class="text-lg text-slate-600 font-medium">Capture promises, loans, and borrowed items with clear dates, reminders, and notes—stored locally on your phone.</p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
-                    <div class="lg:col-span-8 group relative overflow-hidden rounded-[2.5rem] bg-white border border-slate-200 p-10 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md">
-                        <div class="flex flex-col md:flex-row gap-10">
-                            <div class="flex-1">
-                                <h4 class="text-2xl font-bold text-slate-900 mb-4">Promise Engine</h4>
-                                <p class="text-slate-600 leading-relaxed mb-6">Track commitments with clear due dates, priorities, and reminders—plus optional notes or proof.</p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-3 text-sm font-medium text-slate-600"><div class="w-1.5 h-1.5 rounded-full bg-indigo-500"></div> Local reminders with exact times</li>
-                                    <li class="flex items-center gap-3 text-sm font-medium text-slate-600"><div class="w-1.5 h-1.5 rounded-full bg-indigo-500"></div> Recurring commitments and follow-ups</li>
-                                </ul>
-                            </div>
-                            <div class="flex-1 bg-slate-50 rounded-2xl border border-slate-200 p-6 min-h-[200px] flex items-center justify-center">
-                                <div class="w-full space-y-3"><div class="h-10 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center px-4"><div class="w-2 h-2 rounded-full bg-indigo-500 mr-3"></div><div class="h-2 w-24 bg-indigo-500/30 rounded"></div></div><div class="h-10 bg-slate-200/70 rounded-xl flex items-center px-4 opacity-60"><div class="w-2 h-2 rounded-full bg-slate-400 mr-3"></div><div class="h-2 w-32 bg-slate-300/70 rounded"></div></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-4 group p-10 rounded-[2.5rem] bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md flex flex-col">
-                        <h4 class="text-2xl font-bold text-slate-900 mb-4">Money Ledger</h4>
-                        <p class="text-slate-600 leading-relaxed mb-8">Log informal debts and credits with clear balances and multi-currency support.</p>
-                        <div class="mt-auto pt-6 border-t border-slate-200 flex justify-between font-bold"><span class="text-emerald-500">$1,240 Credit</span><span class="text-rose-500">$350 Debt</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Privacy Section -->
-        <section id="privacy" class="relative py-24 lg:py-48 bg-slate-50 overflow-hidden">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 blur-[160px] rounded-full -z-10"></div>
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                    <div class="text-left">
-                        <h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-indigo-600 mb-4">Privacy by design</h2>
-                        <h3 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tighter leading-tight mb-8">Your commitments stay <br> <span class="text-indigo-600">only on your device.</span></h3>
-                        <p class="text-xl text-slate-600 font-medium leading-relaxed mb-10">Pactora keeps your promises, debts, and notes offline, with no accounts or cloud sync.</p>
-                        <div class="space-y-6 text-left">
-                            <div class="flex items-start gap-5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg></div>
-                                <div><h4 class="text-lg font-bold text-slate-900">Zero cloud synchronization</h4><p class="text-slate-600">We run no servers. Your data lives in local storage on your phone.</p></div>
-                            </div>
-                            <div class="flex items-start gap-5">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
-                                <div><h4 class="text-lg font-bold text-slate-900">No account required</h4><p class="text-slate-600">Start tracking in seconds. No email, no identity tracking.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <div class="aspect-square max-w-md mx-auto rounded-[3rem] bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 border border-indigo-500/20 p-12 flex items-center justify-center relative shadow-inner">
-                            <div class="absolute inset-0 bg-indigo-500/5 animate-pulse rounded-[3rem]"></div>
-                            <svg class="w-48 h-48 text-indigo-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            <div class="absolute -bottom-6 -right-6 px-6 py-4 rounded-2xl bg-white border border-slate-200 shadow-2xl text-left">
-                                <p class="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-1">Status: Secure</p>
-                                <p class="text-sm font-bold text-slate-900">Local Encryption Active</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Bento -->
-        <section id="features" class="relative py-24 lg:py-40 bg-white overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-                <div class="mb-20"><h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-indigo-600 mb-4">Capabilities</h2><h3 class="text-4xl font-bold text-slate-900 tracking-tight">Everything you need to stay on track.</h3></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                    <div class="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md"><div class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6"><svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></div><h4 class="text-lg font-bold text-slate-900 mb-3">Promise Engine</h4><p class="text-sm text-slate-600">Recurrence, reminders, and proof attachments.</p></div>
-                    <div class="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6"><svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h4 class="text-lg font-bold text-slate-900 mb-3">Multi-currency</h4><p class="text-sm text-slate-600">Track balances in INR, USD, EUR, GBP, and more.</p></div>
-                    <div class="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md"><div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center mb-6"><svg class="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></div><h4 class="text-lg font-bold text-slate-900 mb-3">Asset vault</h4><p class="text-sm text-slate-600">Record borrowed items with condition notes and photos.</p></div>
-                    <div class="p-8 rounded-[2rem] bg-white border border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:shadow-md"><div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6"><svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg></div><h4 class="text-lg font-bold text-slate-900 mb-3">Smart alarms</h4><p class="text-sm text-slate-600">Exact-time reminders without constant cloud sync.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final Conversion CTA -->
-        <section class="relative py-24 lg:py-40 overflow-hidden bg-indigo-600/5">
+        <!-- Social Proof / Trust -->
+        <section class="bg-gray-100 py-16">
             <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tighter mb-8 animate-fade-in-up">Ready to stay on top <br class="hidden md:block"> of your commitments?</h2>
-                <p class="text-xl text-slate-600 mb-12 animate-fade-in-up delay-100">Join the beta and try the offline promise tracker built for clarity and privacy.</p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up delay-200">
-                    <a href="contact.html" class="w-full sm:w-auto px-10 py-5 text-lg font-bold text-white bg-indigo-600 rounded-full shadow-2xl shadow-indigo-500/40 hover:bg-indigo-500 hover:scale-105 active:scale-95 transition-all">Get Beta Access</a>
-                    <a href="mailto:support@pactora.app" class="w-full sm:w-auto px-10 py-5 text-lg font-bold text-slate-700 border border-slate-200 rounded-full hover:bg-slate-100 transition-all">Contact Developer</a>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="font-bold text-slate-900 mb-1">Privacy Focused</div>
+                        <div class="text-sm text-slate-500">Your data stays yours</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-slate-900 mb-1">Secure</div>
+                        <div class="text-sm text-slate-500">Local storage first</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-slate-900 mb-1">Easy to Use</div>
+                        <div class="text-sm text-slate-500">Intuitive interface</div>
+                    </div>
+                    <div>
+                        <div class="font-bold text-slate-900 mb-1">Cross-device</div>
+                        <div class="text-sm text-slate-500">Syncs when needed</div>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Download -->
+        <section id="download" class="max-w-4xl mx-auto px-6 py-24 text-center">
+            <img src="assets/images/logo.png" alt="Pactora Logo" class="w-24 h-24 mx-auto rounded-2xl shadow-lg mb-8">
+            <h2 class="text-4xl font-bold text-slate-900 tracking-tight mb-6">Start Tracking Today</h2>
+            <p class="text-xl text-slate-600 mb-10">Download Pactora on Google Play and take control of your commitments.</p>
+            <a href="#" class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition shadow-xl hover:scale-105 active:scale-95">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.98 1.98 0 0 1-.41-.532A1.97 1.97 0 0 1 3 20.8V3.2c0-.306.071-.595.199-.854.13-.26.311-.482.529-.661.161-.132.35-.226.552-.271zM14.654 12.862l3.414 3.414-11.83 6.83a2.01 2.01 0 0 1-.825.263l9.241-10.507zM14.654 11.138L5.413.631a2.01 2.01 0 0 1 .825.263l11.83 6.83-3.414 3.414zM18.892 10.3l3.522 2.034a.978.978 0 0 1 0 1.696L18.89 16.06l-3.456-3.457L18.892 10.3z"/></svg>
+                Download on Google Play
+            </a>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-50 border-t border-slate-200 py-20">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2 text-left">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
-                        </div>
-                        <span class="text-xl font-extrabold text-slate-900 tracking-tighter">Pactora</span>
-                    </div>
-                    <p class="max-w-xs text-slate-600 text-sm leading-relaxed mb-8">Private, offline-first tracking for promises, IOUs, and borrowed items.</p>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/sooubh/pactora" class="text-slate-500 hover:text-slate-900 transition-colors"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-                    </div>
-                </div>
-                <div>
-                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Product</h5>
-                    <ul class="space-y-4 text-sm font-medium text-slate-600">
-                        <li><a href="index.html#features" class="hover:text-slate-900 transition-colors">Features</a></li>
-                        <li><a href="how-to-use.html" class="hover:text-slate-900 transition-colors">User Guide</a></li>
-                        <li><a href="contact.html" class="hover:text-slate-900 transition-colors">Join Beta</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-slate-900 font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
-                    <ul class="space-y-4 text-sm font-medium text-slate-600">
-                        <li><a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-slate-900 transition-colors">Terms of Use</a></li>
-                    </ul>
-                </div>
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="assets/images/logo-icon.png" alt="Pactora Logo" class="w-6 h-6 rounded">
+                <span class="font-bold text-slate-900">Pactora</span>
             </div>
-            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-500">
-                <p>&copy; 2026 Pactora. Made with ❤️ by Sourabh Singh.</p>
-                <p>Offline-Always &bull; Privacy-First</p>
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="https://github.com/sooubh/pactora" class="hover:text-slate-900">GitHub</a>
+                <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-slate-900">Terms of Use</a>
+                <a href="contact.html" class="hover:text-slate-900">Contact</a>
+            </div>
+            <div class="text-sm text-slate-400">
+                &copy; 2026 Pactora. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-slate-900/90 backdrop-blur-sm items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoomed Screenshot" class="max-w-full max-h-full rounded-xl shadow-2xl">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
