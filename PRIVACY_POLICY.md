@@ -217,8 +217,8 @@ We reserve the right to modify this Policy. Any changes will be announced within
 ## 11. CONTACT AND LEGAL INQUIRIES
 
 **Developer:** Sourabh Singh
-**Email:** support@pactora.app
-**Mailing Address:** Available upon request via support@pactora.app
+**Email:** sourabh3527@gmail.com
+**Mailing Address:** Available upon request via sourabh3527@gmail.com
 **Website:** [https://sooubh.github.io/pactora/](https://sooubh.github.io/pactora/)
 
 ---

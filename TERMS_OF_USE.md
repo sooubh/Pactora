@@ -198,7 +198,7 @@ WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS, WE RESERVE THE RIGHT TO, IN
 ## 13. CONTACT INFORMATION
 
 **Developer:** Sourabh Singh
-**Email:** support@pactora.app
+**Email:** sourabh3527@gmail.com
 **Website:** [https://sooubh.github.io/pactora/](https://sooubh.github.io/pactora/)
 
 ---
