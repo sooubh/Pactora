@@ -1,235 +1,85 @@
-# 🤝 Pactora: The Ultimate Offline Integrity & Commitment Tracker
+# Pactora
 
-<p align="center">
-  <img src="app-logo.png" width="160" alt="Pactora Logo">
-</p>
+Pactora is a private, offline-first app that helps you track commitments, money owed, and items lent or borrowed. It keeps your money, promises, and shared commitments organized in one beautiful place.
 
-<p align="center">
-  <strong>Never forget a promise. Restore integrity to your relationships.</strong><br>
-  <em>100% Offline • Zero Tracking • Privacy-First Architecture</em>
-</p>
+## Project Overview
 
----
+Pactora acts as your personal accountability engine. It solves the awkward problem of forgetting promises or losing track of small loans and borrowed items by providing a clear, simple, and locally-stored record.
 
-## 🌟 The Philosophy: Radical Privacy
+## Features
 
-In an era of relentless data harvesting and cloud synchronization, **Pactora** stands as a sanctuary for your personal commitments. Built on the **Privacy-First, Offline-Always (PFOA)** manifesto, Pactora ensures that your financial IOUs, borrowed physical assets, and solemn promises never leave your device. 
+- **Promise Tracking:** Never forget a commitment again. Log promises you make or those made to you.
+- **Expense Tracking:** Log shared expenses, IOUs, and split bills. Keep a clear record of who owes what.
+- **Shared Records:** Ensure everyone is on the same page with straightforward logs.
+- **Activity Timeline:** View a chronological history of all your activities and settled debts.
+- **Secure Data:** Privacy-first design with local storage and offline-first capabilities.
 
-No accounts. No servers. No surveillance. Just pure accountability.
+## Screenshots
 
----
+<div align="center">
+  <img src="assets/images/home.png" width="200" alt="Home Page" />
+  <img src="assets/images/promise.png" width="200" alt="Promise Page" />
+  <img src="assets/images/finance.png" width="200" alt="Finance Page" />
+  <img src="assets/images/timeline.png" width="200" alt="Timeline" />
+</div>
 
-## 🚀 Key Feature Highlights
+## Tech Stack
 
-### 📝 Promise Engine
-- Track commitments made by you (outbound) or to you (inbound).
-- Set exact deadlines with **Exact Alarm** precision.
-- Attachment support for proof of completion or original contracts.
-- Smart recurrence (Daily, Weekly, Monthly) for habitual commitments.
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Styling:** Tailwind CSS (via CDN)
+- **Typography:** Inter (Google Fonts)
+- **Deployment/Hosting:** Static file hosting ready (GitHub Pages, Netlify, Vercel, etc.)
 
-### 💰 Money Ledger
-- Informal debt and credit tracking for friends and family.
-- **Global Currency Support:** Dynamic symbols for INR, USD, EUR, GBP, JPY, and more.
-- Partial settlement tracking with automated balance calculation.
-- Color-coded visual cues (Red for Debt, Green for Credit).
+## Installation
 
-### 📦 Asset Borrow/Lend
-- Document physical item transfers (e.g., tools, books, electronics).
-- Record item condition at handover with high-resolution photos.
-- Automatic return reminders to prevent "forgotten" items.
+Getting the website running locally is extremely simple.
 
-### 👥 Relationship Directory
-- Unified history for every person in your life.
-- View a master ledger of every promise, payment, and item shared with a contact.
-- Sync from device contacts for seamless entry.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sooubh/pactora.git
+   cd pactora
+   ```
 
-### 📊 Visual Analytics
-- **Dashboard Summary:** High-level matrix of your current status.
-- **Interactive Calendar:** Visual dot-indicators for upcoming deadlines.
-- **Timeline:** An immutable chronological log of every action taken.
-- **Stats:** Data-driven charts showing category distribution and financial ratios.
+2. **Run the site:**
+   Since it's a static site, you can just open `index.html` in your browser.
+   Alternatively, use a local server:
+   ```bash
+   # Using Python 3
+   python -m http.server 8000
+   ```
+   Then navigate to `http://localhost:8000`.
 
----
+## Project Structure
 
-## 📸 Screen-by-Screen Gallery
+```text
+pactora/
+├── assets/
+│   └── images/          # Application screenshots and logo files
+├── index.html           # Main landing page
+├── how-to-use.html      # User guide page
+├── contact.html         # Contact/Support page
+├── privacy.html         # Privacy Policy page
+├── terms.html           # Terms of Use page
+├── script.js            # Custom JavaScript functionality
+├── style.css            # Additional custom styles
+├── README.md            # Project documentation
+├── HOW_TO_USE.md        # Detailed text guide
+├── PRIVACY_POLICY.md    # Privacy Policy text
+└── TERMS_OF_USE.md      # Terms of Use text
+```
 
-> *Note: Place your screenshots in the `/screenshots` directory and link them below.*
+## Contributing
 
-### 1. The Dashboard (Command Center)
-| Overview | Summary Grid | Recent Activity |
-| :---: | :---: | :---: |
-| ![Dashboard Placeholder](docs/screenshots/dashboard_main.png) | ![Summary Placeholder](docs/screenshots/dashboard_summary.png) | ![Activity Placeholder](docs/screenshots/dashboard_activity.png) |
-| *Master view showing your integrity score and key stats.* | *Dynamic grid tracking Pending, Overdue, and Money.* | *Real-time feed of your latest updates.* |
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### 2. Money Ledger
-| Record List | Transaction Details | Add/Edit Record |
-| :---: | :---: | :---: |
-| ![Money List Placeholder](docs/screenshots/money_list.png) | ![Money Detail Placeholder](docs/screenshots/money_detail.png) | ![Add Money Placeholder](docs/screenshots/money_add.png) |
-| *Clean, color-coded list of all financial commitments.* | *Detailed view with proof photos and history.* | *Sleek input form with currency and time pickers.* |
+## License
 
-### 3. Promise Tracker
-| Active Promises | Recurrence Settings | Proof Uploads |
-| :---: | :---: | :---: |
-| ![Promise List Placeholder](docs/screenshots/promise_list.png) | ![Recurrence Placeholder](docs/screenshots/promise_recurrence.png) | ![Proof Placeholder](docs/screenshots/promise_proof.png) |
-| *Filter by priority and status to stay focused.* | *Configure habitual tasks with zero-effort setup.* | *Capture images as evidence of your word.* |
+This project is open-source and available for usage. Please review the repository for any specific licensing files or contact the author.
 
-### 4. Borrow & Lend
-| Item Catalog | Handover Condition | Return Reminders |
-| :---: | :---: | :---: |
-| ![Borrow List Placeholder](docs/screenshots/borrow_list.png) | ![Condition Placeholder](docs/screenshots/borrow_condition.png) | ![Reminders Placeholder](docs/screenshots/borrow_reminders.png) |
-| *Keep track of who has your things and when they're coming back.* | *Note item state to avoid disputes later.* | *Automated exact alerts for return dates.* |
+## Author
 
-### 5. Advanced Visualization & Tools
-| Personal Stats | Global Calendar | Timeline Feed |
-| :---: | :---: | :---: |
-| ![Stats Placeholder](docs/screenshots/stats.png) | ![Calendar Placeholder](docs/screenshots/calendar.png) | ![Timeline Placeholder](docs/screenshots/timeline.png) |
-| *Deep-dive into your commitment patterns.* | *Visual roadmap of your month's deadlines.* | *Every action you've ever taken, recorded.* |
----
-
-## 📱 Google Play Store Launch
-
-We are thrilled to announce that **Pactora** is now officially available for download on the Google Play Store! Join thousands of users who are restoring integrity to their relationships with our offline-first commitment tracker.
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.your.package.name">
-    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="240" alt="Get it on Google Play">
-  </a><br>
-  <em>(Note: Replace dummy link with actual store URL after production rollout)</em>
-</p>
-
----
-
-## 🚀 Key Feature Highlights
-...
----
-
-## 🛠 Technical Architecture & Deep Tech Stack
-
-Pactora is engineered for performance, security, and extreme reliability. Below is an exhaustive breakdown of the technologies that power our offline-first experience.
-
-### Core Framework & Language
-- **[Flutter 3.19.0+](https://flutter.dev/):** Utilized for its high-performance rendering engine (Skia/Impeller) and multi-platform consistency.
-- **[Dart SDK 3.0.0+](https://dart.dev/):** Leverages sound null safety and efficient AOT (Ahead-of-Time) compilation for native machine code performance.
-
-### State Management & Dependency Injection
-- **[Riverpod 2.5](https://riverpod.dev/):** The standard for modern Flutter development. We use the **Code Generation** variant (`riverpod_generator`) to ensure:
-  - **Compile-time safety:** No runtime provider exceptions.
-  - **Auto-disposal:** Optimal memory management by killing providers when screens are popped.
-  - **Global Access:** Seamless data flow across Dashboard, Promises, and Finance modules.
-
-### High-Performance Local Storage
-- **[Isar 3.1 (NoSQL)](https://isar.dev/):** A lightning-fast database designed specifically for Flutter.
-  - **ACID Compliant:** Ensures your commitments are never lost during a crash or power failure.
-  - **Static Typing:** Direct mapping between Dart objects and database collections.
-  - **Powerful Queries:** Complex filtering for the Search and Timeline modules without the overhead of SQL.
-  - **Asynchronous Execution:** All DB operations run in a background isolate to keep the UI at a buttery-smooth 60/120 FPS.
-
-### Declarative Navigation
-- **[GoRouter 13.2](https://pub.dev/packages/go_router):** A robust routing solution that handles:
-  - **Deep Linking:** Capability to jump into specific promise or money records.
-  - **Nested Navigation:** Persistent shell for the bottom navigation bar.
-  - **State-based Redirection:** Automatically redirecting users to Premium or Onboarding based on local preferences.
-
-### Notification & Alarm System
-- **[Flutter Local Notifications](https://pub.dev/packages/flutter_local_notifications):** The backbone of our reminder engine.
-- **Exact Alarms (`SCHEDULE_EXACT_ALARM`):** Targeted implementation for Android 11 to 16, ensuring your "9:00 AM" reminder triggers at exactly 9:00 AM, bypassing OS battery optimization (Doze mode).
-
-### UI/UX & Design Components
-- **Material 3 (M3):** Full implementation of Google's latest design language, featuring:
-  - **Adaptive Color Palettes:** Dynamic UI that shifts based on status (e.g., Red for Debt, Blue for Pending).
-  - **Custom Typography:** Integrated with [Google Fonts](https://pub.dev/packages/google_fonts).
-  - **Interactive Elements:** [Flutter Slidable](https://pub.dev/packages/flutter_slidable) for quick swipe actions (Archive/Delete/Pay).
-  - **Data Visualization:** [FL Chart](https://pub.dev/packages/fl_chart) for high-performance financial and task analytics.
-
-### Third-Party Integrations (Privacy-Friendly)
-- **Google Mobile Ads (AdMob):** Monetization engine for the free tier, restricted to technical metadata.
-- **In-App Purchase (IAP):** Native Play Store billing integration for seamless Premium upgrades.
-- **Share Plus:** One-tap sharing of commitment reminders via WhatsApp, Telegram, or SMS.
-- **Fast Contacts:** High-speed contact synchronization logic.
-
----
-
-## 📦 Detailed Configuration & Setup
-
-- Dart SDK: `>=3.0.0 <4.0.0`
-- Android SDK (v34+ recommended) or iOS/Xcode environment.
-
-### Installation Steps
-1.  **Clone & Fetch Dependencies:**
-    ```bash
-    git clone https://github.com/your-username/Pactora.git
-    cd Pactora
-    flutter pub get
-    ```
-
-2.  **Generate Database & Riverpod Schemas:**
-    *Crucial step to generate Isar collection classes and Riverpod providers.*
-    ```bash
-    flutter pub run build_runner build --delete-conflicting-outputs
-    ```
-
-3.  **Run the Application:**
-    ```bash
-    flutter run
-    ```
-
-### Platform Permissions
-- **Android:**
-  - `POST_NOTIFICATIONS`: For daily reminders.
-  - `SCHEDULE_EXACT_ALARM`: For precise deadline alerts (Android 12+).
-  - `READ_CONTACTS`: For syncing people.
-  - `CAMERA`: For proof photos.
-
----
-
-## 🛡 Security & Privacy Model
-
-- **Local Storage:** All user data is stored in the app's internal storage sandbox. No other apps can access it.
-- **Manual Backups:** Use the **Export Backup** feature to create an encrypted `.pactora` file. You are responsible for where you save this file.
-- **Zero Cloud:** We do not provide cloud sync. If you lose your phone and don't have a backup file, your data is gone—just the way a private app should be.
-- **Biometric Ready:** The app supports system-level locking to keep your commitments private even from people you hand your phone to.
-
----
-
-## 💎 Monetization: Pactora Premium
-
-Pactora is free to use with limited records. The **Premium Upgrade** allows the developer to keep the app ad-free and server-less.
-- **Benefits:**
-  - Unlocked Unlimited Records (Promises, Money, Items).
-  - 100% Ad-Free Experience.
-  - Support for Independent, Privacy-First Software.
-  - Lifetime Purchase and Subscription options available.
-
----
-
-## 📄 Legal & Compliance
-
-Exhaustive documentation is available in the `docs/` folder:
-- [Detailed Privacy Policy](docs/legal/PRIVACY_POLICY.md)
-- [Terms of Use & License](docs/legal/TERMS_OF_USE.md)
-- [Master User Guide](docs/guides/HOW_TO_USE.md)
-
----
-
-## 🤝 Contributing
-
-We welcome contributions that align with our **Offline-Always** philosophy.
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
-
-## 👨‍💻 Developer & Support
-
-- **Developer:** Sourabh Singh
-- **Contact:** support@pactora.app
-- **Website:** [sooubh.github.io/pactora](https://sooubh.github.io/pactora/)
-
----
-
-<p align="center">
-  Made with ❤️ by Sourabh Singh. Stay honest. Stay accountable.
-</p>
+GitHub: [@sooubh](https://github.com/sooubh)
