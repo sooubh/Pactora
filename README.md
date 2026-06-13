@@ -64,7 +64,7 @@ No accounts. No servers. No surveillance. Just pure accountability.
 ### 2. Money Ledger
 | Record List | Transaction Details | Add/Edit Record |
 | :---: | :---: | :---: |
-| ![Money List Placeholder](assets/images/finance.png) | ![Money Detail Placeholder](docs/screenshots/money_detail.png) | ![Add Money Placeholder](docs/screenshots/money_add.png) |
+| ![Money List Placeholder](assets/images/finance.png) | ![Money Detail Placeholder](assets/images/TRANSECTION DETAILS.jpg) | ![Add Money Placeholder](assets/images/NEW MONEY RECORD.jpg) |
 | *Clean, color-coded list of all financial commitments.* | *Detailed view with proof photos and history.* | *Sleek input form with currency and time pickers.* |
 
 ### 3. Promise Tracker
