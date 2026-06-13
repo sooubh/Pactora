@@ -56,9 +56,9 @@ No accounts. No servers. No surveillance. Just pure accountability.
 > *Note: Place your screenshots in the `/screenshots` directory and link them below.*
 
 ### 1. The Dashboard (Command Center)
-| Overview | Summary Grid | Recent Activity |
+| Overview | Profile | Statistics |
 | :---: | :---: | :---: |
-| ![Dashboard Placeholder](assets/images/home.png) | ![Summary Placeholder](docs/screenshots/dashboard_summary.png) | ![Activity Placeholder](docs/screenshots/dashboard_activity.png) |
+| ![Dashboard Placeholder](assets/images/home.png) | ![Profile](assets/images/profile.png) | ![Statistics](assets/images/statistics.png) |
 | *Master view showing your integrity score and key stats.* | *Dynamic grid tracking Pending, Overdue, and Money.* | *Real-time feed of your latest updates.* |
 
 ### 2. Money Ledger
@@ -172,27 +172,17 @@ Pactora is free to use with limited records. The **Premium Upgrade** allows the 
 ## 📄 Legal & Compliance
 
 Exhaustive documentation is available in the `docs/` folder:
-- [Detailed Privacy Policy](docs/legal/PRIVACY_POLICY.md)
-- [Terms of Use & License](docs/legal/TERMS_OF_USE.md)
-- [Master User Guide](docs/guides/HOW_TO_USE.md)
+- [Detailed Privacy Policy](PRIVACY_POLICY.md)
+- [Terms of Use & License](TERMS_OF_USE.md)
+- [Master User Guide](HOW_TO_USE.md)
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions that align with our **Offline-Always** philosophy.
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
 
 ## 👨‍💻 Developer & Support
 
 - **Developer:** Sourabh Singh
-- **Contact:** support@pactora.app
+- **Contact:** sourabh3527@gmail.com
 - **Website:** [sooubh.github.io/pactora](https://sooubh.github.io/pactora/)
 
 ---
