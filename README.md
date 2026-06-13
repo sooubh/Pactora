@@ -1,7 +1,7 @@
 # 🤝 Pactora: The Ultimate Offline Integrity & Commitment Tracker
 
 <p align="center">
-  <img src="app-logo.png" width="160" alt="Pactora Logo">
+  <img src="assets/images/logo-icon.png" width="160" alt="Pactora Logo">
 </p>
 
 <p align="center">
