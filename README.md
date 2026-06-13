@@ -91,7 +91,7 @@ No accounts. No servers. No surveillance. Just pure accountability.
 We are thrilled to announce that **Pactora** is now officially available for download on the Google Play Store! Join thousands of users who are restoring integrity to their relationships with our offline-first commitment tracker.
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.your.package.name">
+  <a href="https://play.google.com/store/apps/details?id=com.pactora.sooubh">
     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="240" alt="Get it on Google Play">
   </a><br>
   <em>(Note: Replace dummy link with actual store URL after production rollout)</em>
@@ -146,39 +146,6 @@ Pactora is engineered for performance, security, and extreme reliability. Below 
 - **In-App Purchase (IAP):** Native Play Store billing integration for seamless Premium upgrades.
 - **Share Plus:** One-tap sharing of commitment reminders via WhatsApp, Telegram, or SMS.
 - **Fast Contacts:** High-speed contact synchronization logic.
-
----
-
-## 📦 Detailed Configuration & Setup
-
-- Dart SDK: `>=3.0.0 <4.0.0`
-- Android SDK (v34+ recommended) or iOS/Xcode environment.
-
-### Installation Steps
-1.  **Clone & Fetch Dependencies:**
-    ```bash
-    git clone https://github.com/your-username/Pactora.git
-    cd Pactora
-    flutter pub get
-    ```
-
-2.  **Generate Database & Riverpod Schemas:**
-    *Crucial step to generate Isar collection classes and Riverpod providers.*
-    ```bash
-    flutter pub run build_runner build --delete-conflicting-outputs
-    ```
-
-3.  **Run the Application:**
-    ```bash
-    flutter run
-    ```
-
-### Platform Permissions
-- **Android:**
-  - `POST_NOTIFICATIONS`: For daily reminders.
-  - `SCHEDULE_EXACT_ALARM`: For precise deadline alerts (Android 12+).
-  - `READ_CONTACTS`: For syncing people.
-  - `CAMERA`: For proof photos.
 
 ---
 
