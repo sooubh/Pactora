@@ -64,25 +64,25 @@ No accounts. No servers. No surveillance. Just pure accountability.
 ### 2. Money Ledger
 | Record List | Transaction Details | Add/Edit Record |
 | :---: | :---: | :---: |
-| ![Money List Placeholder](assets/images/finance.png) | ![Money Detail Placeholder](assets/images/TRANSECTION DETAILS.jpg) | ![Add Money Placeholder](assets/images/NEW MONEY RECORD.jpg) |
+| ![Money List Placeholder](assets/images/finance.png) | ![Money Detail Placeholder](assets/images/TRANSECTION-DETAILS.jpg) | ![Add Money Placeholder](assets/images/NEW-MONEY-RECORD.jpg) |
 | *Clean, color-coded list of all financial commitments.* | *Detailed view with proof photos and history.* | *Sleek input form with currency and time pickers.* |
 
 ### 3. Promise Tracker
-| Active Promises | Recurrence Settings | Proof Uploads |
+| Active Promises | Details Page | Add/Edit Record |
 | :---: | :---: | :---: |
-| ![Promise List Placeholder](docs/screenshots/promise_list.png) | ![Recurrence Placeholder](docs/screenshots/promise_recurrence.png) | ![Proof Placeholder](docs/screenshots/promise_proof.png) |
+| ![Promise List Placeholder](assets/images/PROMISE-PAGE.jpg) | ![Details Page](assets/images/PROMISE-DETAILS.jpg) | ![Proof Placeholder](assets/images/NEW-PROMISE.jpg) |
 | *Filter by priority and status to stay focused.* | *Configure habitual tasks with zero-effort setup.* | *Capture images as evidence of your word.* |
 
 ### 4. Borrow & Lend
 | Item Catalog | Handover Condition | Return Reminders |
 | :---: | :---: | :---: |
-| ![Borrow List Placeholder](docs/screenshots/borrow_list.png) | ![Condition Placeholder](docs/screenshots/borrow_condition.png) | ![Reminders Placeholder](docs/screenshots/borrow_reminders.png) |
+| ![Borrow List Placeholder](assets/images/BORROW-PAGE.jpg) | ![Condition Placeholder](assets/images/ITEM-DETAILS.jpg) | ![Reminders Placeholder](assets/images/BORROW-PAGE.jpg) |
 | *Keep track of who has your things and when they're coming back.* | *Note item state to avoid disputes later.* | *Automated exact alerts for return dates.* |
 
 ### 5. Advanced Visualization & Tools
 | Personal Stats | Global Calendar | Timeline Feed |
 | :---: | :---: | :---: |
-| ![Stats Placeholder](docs/screenshots/stats.png) | ![Calendar Placeholder](docs/screenshots/calendar.png) | ![Timeline Placeholder](docs/screenshots/timeline.png) |
+| ![Stats Placeholder](assets/images/statistics.png) | ![Calendar Placeholder](assets/images/calendar.png) | ![Timeline Placeholder](assets/images/timeline.png) |
 | *Deep-dive into your commitment patterns.* | *Visual roadmap of your month's deadlines.* | *Every action you've ever taken, recorded.* |
 ---
 
