@@ -58,13 +58,13 @@ No accounts. No servers. No surveillance. Just pure accountability.
 ### 1. The Dashboard (Command Center)
 | Overview | Summary Grid | Recent Activity |
 | :---: | :---: | :---: |
-| ![Dashboard Placeholder](docs/screenshots/dashboard_main.png) | ![Summary Placeholder](docs/screenshots/dashboard_summary.png) | ![Activity Placeholder](docs/screenshots/dashboard_activity.png) |
+| ![Dashboard Placeholder](assets/images/home.png) | ![Summary Placeholder](docs/screenshots/dashboard_summary.png) | ![Activity Placeholder](docs/screenshots/dashboard_activity.png) |
 | *Master view showing your integrity score and key stats.* | *Dynamic grid tracking Pending, Overdue, and Money.* | *Real-time feed of your latest updates.* |
 
 ### 2. Money Ledger
 | Record List | Transaction Details | Add/Edit Record |
 | :---: | :---: | :---: |
-| ![Money List Placeholder](docs/screenshots/money_list.png) | ![Money Detail Placeholder](docs/screenshots/money_detail.png) | ![Add Money Placeholder](docs/screenshots/money_add.png) |
+| ![Money List Placeholder](assets/images/finance.png) | ![Money Detail Placeholder](docs/screenshots/money_detail.png) | ![Add Money Placeholder](docs/screenshots/money_add.png) |
 | *Clean, color-coded list of all financial commitments.* | *Detailed view with proof photos and history.* | *Sleek input form with currency and time pickers.* |
 
 ### 3. Promise Tracker
